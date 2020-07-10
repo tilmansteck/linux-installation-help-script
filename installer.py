@@ -15,7 +15,7 @@ def banner():
 ** Linux installation manager by Tilman Steck **
 
 NOTE: [*] Installation is starting!\n\n\n
-    """
+"""
 
     time.sleep(1)
     print(text)
@@ -82,7 +82,7 @@ def programm_installer():
         exit()
 
 
-banner()
+# banner()
 
 # use installer or not
 i1 = input("Do you want to use the default linux installer? y or n: ")
