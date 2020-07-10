@@ -1,5 +1,6 @@
 import os
 import time
+import threading
 
 
 # script start banner
@@ -78,9 +79,13 @@ def programm_installer():
 
 banner()
 
-installer()
-time.sleep(1)
-programm_installer()
+t_installer = threading.Thread(target=installer)
+t_installer.start()
+t_installer.join()
+
+t_installer = threading.Thread(target=programm_installer)
+t_installer.start()
+t_installer.join()
 
 print("\n\n[*] Installation is done now!")
 exit()
