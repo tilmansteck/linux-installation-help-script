@@ -78,23 +78,9 @@ def programm_installer():
 
 banner()
 
-# use installer or not
-i1 = input("Do you want to use the default linux installer? yes or no: ")
+installer()
+time.sleep(1)
+programm_installer()
 
-if i1 == "yes" or i1 == "Yes":
-    installer()
-
-else:
-    exit()
-
-# install also important programs
-i2 = input("Do you want to install a few important programs? yes or no:")
-
-if i1 == "yes" or i1 == "Yes":
-    programm_installer()
-
-else:
-    exit()
-
-print("[*] Installation is done now!")
+print("\n\n[*] Installation is done now!")
 exit()
