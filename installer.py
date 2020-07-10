@@ -2,6 +2,25 @@ import os
 import time
 
 
+# script start banner
+def banner():
+    text = f"""
+  __       __  .__   __.  __    __  ___   ___ 
+ |  |     |  | |  \ |  | |  |  |  | \  \ /  / 
+ |  |     |  | |   \|  | |  |  |  |  \  V  /  
+ |  |     |  | |  . `  | |  |  |  |   >   <   
+ |  `----.|  | |  |\   | |  `--'  |  /  .  \  
+ |_______||__| |__| \__|  \______/  /__/ \__\ 
+                                            
+** Linux installation manager by Tilman Steck **
+
+NOTE: [*] Installation is starting!\n\n\n
+    """
+
+    time.sleep(1)
+    print(text)
+
+
 # default installer
 def installer():
     print("[*] Starting installation...\n\n")
@@ -61,3 +80,27 @@ def programm_installer():
 
     else:
         exit()
+
+
+banner()
+
+# use installer or not
+i1 = input("Do you want to use the default linux installer? y or n: ")
+
+if i1 == "y" or i1 == "Y":
+    installer()
+
+else:
+    exit()
+
+# install also important programs
+i2 = input("Do you want to install a few important programs? y or n:")
+
+if i1 == "y" or i1 == "Y":
+    programm_installer()
+
+else:
+    exit()
+
+print("[*] Installation is done now!")
+exit()
