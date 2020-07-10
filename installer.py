@@ -30,7 +30,7 @@ def installer():
 
 # installer for important programms
 def programm_installer():
-    nano = input("Do you want to install console text editor 'nano'? y or n: ")
+    nano = input("\nDo you want to install console text editor 'nano'? y or n: ")
 
     # nano installation
     if nano == "y" or nano == "Y":
@@ -40,7 +40,7 @@ def programm_installer():
         pass
 
     # python installation
-    python = input("Do you want to download 'python'? y or n: ")
+    python = input("\nDo you want to download 'python'? y or n: ")
 
     if python == "y" or python == "Y":
         os.system("sudo apt-get install python")
@@ -49,7 +49,7 @@ def programm_installer():
         pass
 
     # screen installation
-    screen = input("Do you want to download 'screen'? y or n: ")
+    screen = input("\nDo you want to download 'screen'? y or n: ")
 
     if screen == "y" or screen == "Y":
         os.system("sudo apt-get install screen")
@@ -58,7 +58,7 @@ def programm_installer():
         pass
 
     # htop installation
-    htop = input("Do you want to download taskmanager 'htop'? y or n: ")
+    htop = input("\nDo you want to download taskmanager 'htop'? y or n: ")
 
     if htop == "y" or htop == "Y":
         os.system("sudo apt-get install htop")
@@ -79,13 +79,23 @@ def programm_installer():
 
 banner()
 
-t_installer = threading.Thread(target=installer)
-t_installer.start()
-t_installer.join()
+# use installer or not
+i1 = input("\nDo you want to use the default linux installer? y or n: ")
 
-t_installer = threading.Thread(target=programm_installer)
-t_installer.start()
-t_installer.join()
+if i1 == "y" or i1 == "Y":
+    installer()
 
-print("\n\n[*] Installation is done now!")
+else:
+    exit()
+
+# install also important programs
+i2 = input("\nDo you want to install a few important programs? y or n:")
+
+if i2 == "y" or i2 == "Y":
+    programm_installer()
+
+else:
+    os._exit(1)
+
+print("\n[*] Installation is done now!")
 exit()
