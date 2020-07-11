@@ -25,7 +25,7 @@ def installer():
     os.system("sudo apt-get update")
     os.system("sudo apt-get upgrade")
 
-    time.sleep(1)
+    time.sleep(0.5)
 
 
 # installer for important programms
@@ -44,6 +44,7 @@ def programm_installer():
 
     if python == "y" or python == "Y":
         os.system("sudo apt-get install python")
+        os.system("sudo apt-get install python3")
 
     else:
         pass
